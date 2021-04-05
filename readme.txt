@@ -509,9 +509,13 @@
 
   Coblfcn was tested extensively using a laptop pc and a Fortran
   compiler that provides approximately 15 decimal digits in double
-  precision arithmetic and approximately 31 digits in quadruple
-  precision arithmetic. If the user's computer provides a different
-  number of digits for either double or quadruple precision, the
+  precision arithmetic and approximately 33 digits in quadruple
+  precision arithmetic. More recently, coblfcn was also tested using a
+  compiler from Absoft that also provided 15 decimal digits for double
+  precision but provided 31 digits of precision for quadruple precision
+  The discussion below will include both the 33 digit and 31 digit
+  results for quadruple precision. If the user's computer provides a
+  different number of digits for either double or quadruple precision, the
   following estimates might need to be adjusted up or down depending
   on whether more or fewer digits are provided.
 
@@ -631,35 +635,62 @@
   a considerable increase in computation time, especially for very large
   cr.
 
-  Testing for ci = 30 showed that useful results were obtained for all
-  values of x down to 0.000001 for cr up to at least 5000. There were
-  a few isolated 5 digit results. See the discussions of estimated
-  accuracies given below for the special case of x = 0 and for the angular
-  functions.
+  When there were 33 digits of precision, testing for values of ci up
+  to 40 showed that coblfcn provides useful results for cr up to at
+  least 5000 and for m up to 1000 and x down to 0.000001. Estimated
+  accuracies for the radial functions were 8 or more digits except for
+  a possible rare 6 or 7 digit result. When there were 31 digits of
+  precision, useful results were obtained over the same ranges of m
+  and x and for cr up to about 4000. There were some scattered 5 digit
+  results. Results for cr = 5000 showed a few isolated 4 digit results
+  occurring primarily for x from about 0.009 to 0.025. See the
+  discussions of estimated accuracies given below for the special case
+  of x = 0 and for the angular functions.
 
-  Testing for ci = 40 showed that useful results were obtained for all
-  values of x down to 0.000001 for cr up to about 4000. There were some
-  scattered 5 digit results. Results for cr = 5000 showed a few isolated
-  4 digit results occurring primarily for x from about 0.009 to 0.025.
-  
-  Testing for ci = 50 showed useful results for x down to 0.000001 and cr
-  up to at least 600. Accuracies were usually 6 or more digits with a
-  rare 5 digit result for m less than 200. Above m = 200, there were a
-  number of 5 digit results and even an occasional 4 digit result for m
+  Testing for ci = 50 with 33 digits of precision showed useful results
+  for x down to 0.000001 and cr up to at least 2000. Accuracies for the
+  radial functions were almost always at least 8 or more digits but
+  occasional accuracies as low as 5 digits were seen near the
+  breakpoint, primarily for cr >= 1  000 and m > 200. When cr = 2000,
+  there were even a few 4 digit results for m >= 700 and a few 3 digit
+  results for m >= 800. It is unlikely that values of m this large will
+  be required by the user. When there were 31 digits of precision,
+  testing showed useful results for x down to 0.000001 and cr up to at
+  least 600. Accuracies were usually 6 or more digits with a rare 5
+  digit result for m less than 200. Above m = 200, there were a number
+  of 5 digit results and even an occasional 4 digit result for m
   between 200 and 350. There were also useful results for cr up to 2000
-  when x <= 0.01 and m was no larger than about 600.
+  when x was no larger than about 0.01 and m was no larger than about
+  600.  
 
-  Testing for ci = 60 showed useful results for all m for cr up to 150
+  Testing for ci = 60 with 33 digits of precision showed useful results
+  for all m and x>= 0.000001 with cr up to 100 although a few 4 digit
+  results occurred at x = 0.00001 and 0.000001. Results for cr = 200
+  were similar except that there were a few more 4 digit results at x
+  = 0.000001 and 0.00001 and some 4 digit results now at x = 0.0001 and
+  x = 0.001. Testing for cr = 500 showed that useful results are only
+  obtained for x >= 0.05 for all m and for x < 0.05 for m up to about
+  160. Testing for cr = 1000 and 2000 showed useful results for x >=
+  0.2 for all m with a possible 4 digit result or so. Testing with 31
+  digits of precision showed useful results for all m for cr up to 150
   when x >= 0.01, for cr up to 300 when x >= 0.1 and for cr up to 1500
   when x >= 0.5.
 
-  Testing for ci = 70 showed useful results for all m for cr up to 75
-  when x >= 0.1, for cr up to 200 when x >= 0.2 and for cr up to 500
-  when x >= 0.5, although a rare 4 digit result occurred sometimes.
+  Testing for ci = 70 with 33 digits of precision showed useful results
+  for all m for cr up to 100 when x >= 0.01, for cr up to 150 when x >=
+  0.05, for cr up to 200 when x >= 0.1, for cr up to 500 when x >= 0.3
+  and for cr up to 1000 when x >= 0.5. Testing with 31 digits of
+  precision showed useful results for all m for cr up to 75 when x >=
+  0.1, for cr up to 200 when x >= 0.2 and for cr up to 500 when x >=
+  0.5, although a rare 4 digit result occurred sometimes.
 
-  Testing for ci = 80 showed useful results for all m for cr up to 30
-  when x >= 0.2, for cr up to 180 when x >= 0.3 and for cr up to 250
-  when x >= 0.5, although a rare 4 digit result occurred sometimes.
+  Testing for ci = 80 with 33 digits of precision showed useful results
+  for cr up to 20 when x >= 0.01, for cr up to 50 when x >= 0.02, for
+  cr up to 100 when x >= 0.2, for cr up to 200 when x >= 0.3 and for ci
+  up to 300 when x >= 0.5. Testing with 31 digits of precision showed
+  useful results for all m for cr up to 30 when x >= 0.2, for cr up to
+  180 when x >= 0.3 and for cr up to 250 when x >= 0.5, although a rare
+  4 digit result occurred sometimes.
 
   Testing for yet higher values of ci showed a continued increase in
   the minimum value of x and a decrease in the maximum value of cr
