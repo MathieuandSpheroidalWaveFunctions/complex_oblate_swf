@@ -104,7 +104,7 @@
 
     subroutine oblfcn(c,m,lnum,ioprad,x,iopang,iopnorm,narg,arg, &
                       r1c,ir1e,r1dc,ir1de,r2c,ir2e,r2dc,ir2de,naccr, &
-                      s1c,is1e,s1dc,is1de,naccs)
+                      s1c,is1e,s1dc,is1de,naccs,naccds)
 
         complex(knd), intent(in)   ::  c
         real(knd), intent (in)     ::  x, arg(narg)
@@ -113,7 +113,7 @@
                                        s1c(lnum, narg), s1dc(lnum, narg)
         integer, intent (out)      ::  ir1e(lnum), ir1de(lnum), ir2e(lnum), ir2de(lnum), &
                                        is1e(lnum, narg), is1de(lnum, narg), & 
-                                       naccr(lnum), naccs(lnum, narg)
+                                       naccr(lnum), naccs(lnum, narg), naccds(lnum narg)
 
       Input and output parameters appearing in the subroutine call
       statement are defined below:
@@ -190,6 +190,9 @@
           naccs  : two-dimensional array naccs(lnum,narg) that contains
                    narg estimated accuracy values for the angular functions
                    for each of the lnum values of l
+          naccds : two-dimensional array naccs(lnum,narg) that contains
+                   narg estimated accuracy values for first derivatives of
+                   the angular functions for each of the lnum values of l
 
   Stand alone Version of oblfcn
 
