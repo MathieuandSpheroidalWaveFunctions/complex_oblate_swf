@@ -22,14 +22,6 @@ program coblfcn
 !               angle coordinate eta for a range of values of m, l,
 !               and eta and for a given value of c.
 !
-!  Coblfcn provides function values for c complex = real(c) + i aimag(c)
-!  = cr + i ci, where the imaginary part ci often accounts for losses in
-!  wave propagation. Ci is assumed positive in coblfcn. If the user has
-!  a negative value for ci, just run coblfcn with ci positive instead
-!  and take the complex conjugate of the results, including the function
-!  values, eigenvalues, expansion coefficients, and normalization
-!  factors.
-!
 !  Coblfcn can be run in double precision, quadruple precision or a hybrid
 !  where the Bouwkamp procedure to refine the eigenvalues is run in quadruple
 !  precision while the remainder of the calculations are performed in double
