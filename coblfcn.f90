@@ -138,7 +138,7 @@ program coblfcn
 !  list the calculated radial and angular functions. Fort.40 and
 !  fort.50 are diagnostic files. Fort.60 provides warning whenever the
 !  estimated accuracy falls below a specified minimum, currently set
-!  equal to 8. Writing to these files is controlled by logicals specified
+!  equal to 6. Writing to these files is controlled by logicals specified
 !  in the module param. False suppresses the file; true enables it.
 !  Debug controls fort.30 and fort.40, warn controls fort.60 and output
 !  controls fort.20 and fort.30. The logical suffix controls whether the
