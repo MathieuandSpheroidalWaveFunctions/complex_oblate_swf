@@ -2192,7 +2192,7 @@ end if
               naccint=-int(log10(abs((wronc-wront)/wront)+dec)- &
                          0.5e0_knd)
               if(naccint.lt.0) naccint=0
-              if(naccint.gt.ndec) naccint=ndec
+              if(naccint.gt.ndec-1) naccint=ndec-1
               nacccor=-int(log10(abs((wronca-wroncb)/wronca)+dec))
               if(nacccor.lt.0) nacccor=0
               if(nacccor.gt.naccrpl) nacccor=naccrpl
@@ -2578,7 +2578,7 @@ end if
               wronc=wronca-wroncb
               naccneu0=-int(log10(abs((wronc-wront)/wront)+dec))
               if(naccneu0.lt.0) naccneu0=0
-              if(naccneu0.gt.ndec) naccneu0=ndec
+              if(naccneu0.gt.ndec-1) naccneu0=ndec-1
               naccneu0w=naccneu0
               nacccor=-int(log10(abs((wronca-wroncb)/wronca)+dec))
               if(nacccor.lt.0) nacccor=0
@@ -5283,13 +5283,13 @@ end if
         wronc=wronca-wroncb
         naccleg=-int(log10(abs((wronc-wront)/wront)+dec))
         if(naccleg.lt.0) naccleg=0
-        if(naccleg.gt.ndec) naccleg=ndec
+        if(naccleg.gt.ndec-1) naccleg=ndec-1
         nacccor=-int(log10(abs((wronca-wroncb)/wronca)+dec))
         if(nacccor.lt.0) nacccor=0
         if(nacccor.gt.naccrpl) nacccor=naccrpl
         nacclega=naccleg
         if(naccleg.gt.0) naccleg=min(naccleg+nacccor,ndec-jsub,naccr1)
-    nacclegb=naccleg    
+        nacclegb=naccleg    
         nstest=max(nspsum,nspdsum)
         iflag2=0
         if(nsdrhor1.ne.0.and.naccleg.lt.minacc.and.nacclega.gt.1 &
@@ -6262,7 +6262,7 @@ end if
         wronc=wronca-wroncb
         wront=(1.0e0_knd,0.0e0_knd)/(cc*(x*x+1.0e0_knd))
         nacceta=-int(log10(abs((wronc-wront)/wront)+dec))
-        if(nacceta.gt.ndec) nacceta=ndec
+        if(nacceta.gt.ndec-1) nacceta=ndec-1
         if(nacceta.lt.0) nacceta=0
         naccetaw=nacceta
         nacccor=-int(log10(abs((wronca-wroncb)/wronca)+dec))
